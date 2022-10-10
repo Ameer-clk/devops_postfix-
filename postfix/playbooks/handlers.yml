@@ -7,11 +7,9 @@
      name: postfix 
      state: latest
      update_cache: yes
-  notify: stop postfix
-
+   notify: stop postfix
 
   handlers:
-
 
   - name: stop postfix 
     service:
