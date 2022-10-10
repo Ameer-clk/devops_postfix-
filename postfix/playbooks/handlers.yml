@@ -17,17 +17,4 @@
     service:
       name: postfix 
       state: stopped 
-      
-  - name: Install nfs-utils
-    yum: 
-      name: nfs
-      state: latest 
-      update_cache: yes
-    notify: start nfs
-    
-  handlers:
-  
-  - name: start nfs 
-    service:
-      name: nfs
-      state: started       
+     
