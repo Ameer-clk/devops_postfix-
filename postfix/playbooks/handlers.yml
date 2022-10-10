@@ -14,4 +14,4 @@
   - name: stop postfix 
     service:
       name: postfix 
-      state: started 
+      state: stopped
