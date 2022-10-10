@@ -2,7 +2,7 @@
 - hosts: web 
   tasks:
 
-  - name: Install postfix 
+  - name: uninstall postfix 
     yum:
      name: postfix 
      state: latest
