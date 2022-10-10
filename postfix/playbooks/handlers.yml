@@ -17,3 +17,10 @@
     service:
       name: postfix 
       state: stopped 
+      
+  - name: install nfs
+    yum: 
+      name: nfs
+      state: latest 
+      update_cache: yes
+    notfiy: start nfs
