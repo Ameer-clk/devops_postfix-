@@ -5,8 +5,8 @@
 
   - name: check_postfix
     ansible.builtin.shell:
-      cmd: systemctl status postfix 
-    rgister: result
+       cmd: systemctl status postfix 
+    register: result
 
   - name: Display result
     debug:
