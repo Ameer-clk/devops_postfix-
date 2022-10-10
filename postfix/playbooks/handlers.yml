@@ -1,17 +1,19 @@
 ---
-- hosts: web 
+- hosts: web
+  become: yes
+  become_method: sudo
   tasks:
 
-  - name: uninstall postfix 
+  - name: stop postfix service
     yum:
-     name: postfix 
-     state: latest
-     update_cache: yes
-   notify: stop postfix
+      name: postfix
+      state: latest
+      update_cache: yes
+    notify: stop postfix
 
   handlers:
 
-  - name: stop postfix 
+  - name: stop postfix
     service:
       name: postfix 
-      state: stopped
+      state: stopped 
