@@ -1,0 +1,16 @@
+---
+- hosts: web 
+  tasks:
+
+  - name: Install postfix 
+    yum:
+     name: postfix 
+     state: latest
+     update_cache: yes
+  when: ansible_facts['os_family'] == "RHEL"
+
+
+  - name: start postfix 
+    service:
+      name: postfix 
+      state: started 

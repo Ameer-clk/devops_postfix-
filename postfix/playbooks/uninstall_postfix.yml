@@ -1,0 +1,15 @@
+---
+- hosts: web 
+  tasks:
+
+  - name: stop postfix service 
+    service:
+      name: postfix 
+      state: stopped
+
+  - name: uninstall postfix 
+    yum:
+     name: postfix 
+     state: stopped 
+
+  

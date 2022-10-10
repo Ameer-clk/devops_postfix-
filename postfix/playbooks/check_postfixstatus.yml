@@ -1,0 +1,14 @@
+---
+- name: check postfix status
+  hosts: web
+  tasks:
+
+  - name: check_postfix
+    ansible.buitin.shell:
+      cmd: systemctl status postfix 
+    rgister: result
+
+  - name: Display result
+    debug:
+      msg: "{{result.stdout_lines}}"
+  

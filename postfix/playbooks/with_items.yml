@@ -1,0 +1,13 @@
+---
+- hosts: web 
+  tasks:
+
+  - name: create users
+    user:
+      name: "{{ietm}}"
+      state: present
+    with_items:
+     - loki
+     - thor
+
+    
