@@ -4,7 +4,7 @@
   tasks:
 
   - name: check_postfix
-    ansible.buitin.shell:
+    ansible.builtin.shell:
       cmd: systemctl status postfix 
     rgister: result
 
