@@ -1,17 +1,19 @@
 ---
-- hosts: web
+- hosts: web 
+  become: yes
+  become_method: sudo
   tasks:
 
   - name: Install postfix 
     yum:
-      name: postfix
-      state: latest
-      update_cache: yes
-    when: ansible_facts['os_family'] == "RHEL"
+     name: postfix 
+     state: latest
+     update_cache: yes
+  when: ansible_facts['os_family'] == "RHEL"
 
 
-  - name: start postfix
+  - name: start postfix 
     service:
-      name: postfix
-      state: started
-    when: ansible_facts['os_family'] == "RHEL"
+      name: postfix 
+      state: started 
+  when: ansible_facts['os_family'] == "RHEL"
