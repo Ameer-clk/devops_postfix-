@@ -1,5 +1,7 @@
 ---
 - hosts: web 
+  become: yes
+  become_method: sudo 
   tasks:
 
   - name: stop postfix service 
