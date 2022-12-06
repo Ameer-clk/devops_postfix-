@@ -4,17 +4,17 @@
   become_method: sudo
   tasks:
 
-  - name: stop postfix service
+  - name: postfix service
     yum:
       name: postfix
       state: latest
       update_cache: yes
-    notify: stop postfix
+    notify: start postfix
 
   handlers:
 
-  - name: stop postfix
+  - name: start postfix
     service:
       name: postfix 
-      state: stopped 
+      state: started 
      
